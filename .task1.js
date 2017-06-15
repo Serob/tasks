@@ -2,7 +2,7 @@ function deleteDeadli()  {
   let interval = setInterval(function() { 
     if(arr.length > 0) { 
       for(let i = 0; i < arr.length; i++) {
-        if (arr[i] >= 40) {
+        if (arr[i].age >= 40) {
           const x = arr.splice(i,1)
           console.log('deleted', x);
         }
@@ -59,11 +59,10 @@ let arr = []
 function createPeople() {
   setInterval(function() {
     let person = new Person(Math.round((Math.random() * 49) +1), randomName());
-    arr.push(person.age);
+    arr.push(person);
   }, 2000)
 }
 
 
-createPeople()
-console.log(arr)
+createPeople();
 deleteDeadli();
