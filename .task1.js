@@ -2,7 +2,7 @@ function deleteDeadli()  {
   let interval = setInterval(function() { 
     if(arr.length > 0) { 
       for(let i = 0; i < arr.length; i++) {
-        if (arr[i] >= 39) {
+        if (arr[i] >= 40) {
           const x = arr.splice(i,1)
           console.log('deleted', x);
         }
@@ -55,19 +55,15 @@ class Person {
       }, 1000);
     }
 }
-
-let person1 = new Person(Math.round((Math.random() * 49) +1), randomName());
-let person2 = new Person(Math.round((Math.random() * 49) +1), randomName());
-let person3 = new Person(Math.round((Math.random() * 49) +1), randomName());
-// let person4 = new Person(Math.round((Math.random() * 49) +1), randomName());
 let arr = []
-arr.push(person1.age,person2.age,person3.age)
+function createPeople() {
+  setInterval(function() {
+    let person = new Person(Math.round((Math.random() * 49) +1), randomName());
+    arr.push(person.age);
+  }, 2000)
+}
+
+
+createPeople()
 console.log(arr)
 deleteDeadli();
-
-
-
-
-
-
-
