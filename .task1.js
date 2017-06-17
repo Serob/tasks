@@ -29,7 +29,13 @@ function randomName () {
         break;
     case 3:
         name = "Yepraqsia";
-        break;   
+        break;
+     case 4:
+        name = "Garfinqyul";
+        break;
+	case 5:
+        name = "Lendrush";
+        break;
    }
   return name
 }
